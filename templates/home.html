@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Problem Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Container to center the frosted box -->
+    <div class="container">
+        <!-- Frosted box with content inside -->
+        <div class="frosted-box">
+            <h1>Welcome to the Physics Problem Solver</h1>
+            <form action="{{ url_for('calculate_problem') }}" method="POST">
+                <select name="problem_type" id="problem_type">
+                    <option value="" disabled selected>Select Problem Type</option>
+                    <option value="projectile">Projectile Motion</option>
+                    <option value="forces">Forces</option>
+                    <option value="electromagnetism">Electromagnetism</option>
+                    <option value="optics">Optics</option>
+                    <option value="electric_field">Electric Field</option>
+                </select>
+                <button type="submit">Solve Problem</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

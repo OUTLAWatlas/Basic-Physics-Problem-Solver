@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Field Calculation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Electric Field Calculation</h1>
+        <form method="POST">
+            <label for="charge">Charge (C):</label>
+            <input type="number" id="charge" name="charge" required><br><br>
+            <label for="distance">Distance from Charge (m):</label>
+            <input type="number" id="distance" name="distance" required><br><br>
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h2>Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

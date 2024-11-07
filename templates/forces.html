@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forces Calculation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Forces Calculation</h1>
+        <form method="POST">
+            <label for="mass">Mass (kg):</label>
+            <input type="number" id="mass" name="mass" required><br><br>
+            <label for="acceleration">Acceleration (m/s²):</label>
+            <input type="number" id="acceleration" name="acceleration" required><br><br>
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h2>Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>
